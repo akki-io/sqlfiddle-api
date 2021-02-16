@@ -26,7 +26,8 @@ class DatabaseService
     public function connections(): array
     {
         return (new MySQLService())->connections()
-            + (new PgSQLService())->connections();
+            + (new PgSQLService())->connections()
+            + (new MsSQLService())->connections();
     }
 
     /**

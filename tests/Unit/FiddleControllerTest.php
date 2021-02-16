@@ -28,6 +28,16 @@ class FiddleControllerTest extends TestCase
         }
     }
 
+    /** @test */
+    public function test_mssql_databases()
+    {
+        $mysqlConnections = MySQLService::SUPPORTED;
+
+        foreach ($mysqlConnections as $connection) {
+            $this->testResult($connection);
+        }
+    }
+
     /**
      * Test the result.
      *

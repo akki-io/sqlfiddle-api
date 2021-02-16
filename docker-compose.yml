@@ -123,3 +123,19 @@ services:
       - 54313:5432
     environment:
       POSTGRES_PASSWORD: postgres
+
+  mssql_2017:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    ports:
+      - 14317:1433
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: StrongPassword@12345
+
+  mssql_2019:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - 14319:1433
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: StrongPassword@12345
