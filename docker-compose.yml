@@ -1,0 +1,125 @@
+version: '3'
+
+services:
+
+  web:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - .:/var/www/html
+    environment:
+      VIRTUAL_HOST: api.sqlfiddle.docker
+      VIRTUAL_PORT: 80
+
+  mysql_51:
+    image: mtirsel/mysql-5.1
+    ports:
+      - 33651:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  mysql_55:
+    image: mysql:5.5
+    ports:
+      - 33655:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  mysql_56:
+    image: mysql:5.6
+    ports:
+      - 33656:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  mysql_57:
+    image: mysql:5.7
+    ports:
+      - 33657:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  mysql_80:
+    image: mysql:8.0
+    ports:
+      - 33680:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+
+  pgsql_90:
+    image: postgres:9.0
+    ports:
+      - 54390:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  pgsql_91:
+    image: postgres:9.1
+    ports:
+      - 54391:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  pgsql_92:
+    image: postgres:9.2
+    ports:
+      - 54392:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  pgsql_93:
+    image: postgres:9.3
+    ports:
+      - 54393:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  pgsql_94:
+    image: postgres:9.4
+    ports:
+      - 54394:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  pgsql_95:
+    image: postgres:9.5
+    ports:
+      - 54395:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  pgsql_96:
+    image: postgres:9.6
+    ports:
+      - 54396:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  pgsql_10:
+    image: postgres:10
+    ports:
+      - 54310:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  pgsql_11:
+    image: postgres:11
+    ports:
+      - 54311:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  pgsql_12:
+    image: postgres:12
+    ports:
+      - 54312:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+
+  pgsql_13:
+    image: postgres:13
+    ports:
+      - 54313:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
